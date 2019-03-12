@@ -1,0 +1,233 @@
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ touch program1.c
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cat>>program1.c
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int x=5;
+    for(int i = 0;i<4;i++){
+        printf("%d",x);
+}
+return 0;} 
+^C
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cpp program1.c -o program1.i
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ gcc program1.i -o program1.out
+
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cat>>k1
+QWE345 eyt tute
+1454flk7
+frt RT6 17A
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cat k1
+QWE345 eyt tute
+1454flk7
+frt RT6 17A
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cat>>k2
+REW345 eyt tile
+145Fm lk7
+frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cat k2
+REW345 eyt tile
+145Fm lk7
+frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ 
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cmp k1 k2
+k1 k2 различаются: байт 1, строка 1
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cmp -c k1 k2
+k1 k2 различаются: байт 1, строка 1 равен 121 Q 122 R
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ sort -c k2
+sort: k2:2: неправильный порядок: 145Fm lk7
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ sort -r k2
+REW345 eyt tile
+frt R6 17 B
+145Fm lk7
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ comm k1 k2
+QWE345 eyt tute
+comm: данные файла 1 не отсортированы
+1454flk7
+frt RT6 17A
+	REW345 eyt tile
+comm: данные файла 2 не отсортированы
+	145Fm lk7
+	frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ wc k1
+ 3  7 37 k1
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ wc -w k1
+7 k1
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ dd if=k1 of=d1
+0+1 записей получено
+0+1 записей отправлено
+37 bytes copied, 0,000530703 s, 69,7 kB/s
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ diff k1 k2
+1,3c1,3
+< QWE345 eyt tute
+< 1454flk7
+< frt RT6 17A
+---
+> REW345 eyt tile
+> 145Fm lk7
+> frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ diff -e k1 k2
+1,3c
+REW345 eyt tile
+145Fm lk7
+frt R6 17 B
+.
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ diff -r k1 k2
+1,3c1,3
+< QWE345 eyt tute
+< 1454flk7
+< frt RT6 17A
+---
+> REW345 eyt tile
+> 145Fm lk7
+> frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ grep -v k1 k2
+REW345 eyt tile
+145Fm lk7
+frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ grep -v s k1 k2
+k1:QWE345 eyt tute
+k1:1454flk7
+k1:frt RT6 17A
+k2:REW345 eyt tile
+k2:145Fm lk7
+k2:frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ grep -0 A f1 f2
+f1:frt RT6 17A
+--
+f1:frt RT6 17A
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ grep -0 A k1 k2
+k1:frt RT6 17A
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ join k1 k2
+join: k2:2: без сортировки: 145Fm lk7
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ join -a 1 k1 k2
+QWE345 eyt tute
+1454flk7
+frt RT6 17A
+join: k2:2: без сортировки: 145Fm lk7
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ join -i k1 k2
+join: k2:2: без сортировки: 145Fm lk7
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ join -v 2 k1  k2
+REW345 eyt tile
+join: k2:2: без сортировки: 145Fm lk7
+145Fm lk7
+frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ tee k3
+ser
+ser
+dty
+dty
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ tee -a k3
+deffk
+deffk
+fuuo
+fuuo
+train
+train
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ tr rrt ht
+rrtt
+tttt
+rrt
+ttt
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ tr -c ddd yyy
+dddd
+yyyy
+ddddddddddyyyyyyddddddnikita@nikita-Lenovo-ideapad-530S-14IKB:~$ od -b k1
+0000000 121 127 105 063 064 065 040 145 171 164 040 164 165 164 145 012
+0000020 061 064 065 064 146 154 153 067 012 146 162 164 040 122 124 066
+0000040 040 061 067 101 012
+0000045
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ od -c k1
+0000000   Q   W   E   3   4   5       e   y   t       t   u   t   e  \n
+0000020   1   4   5   4   f   l   k   7  \n   f   r   t       R   T   6
+0000040       1   7   A  \n
+0000045
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ od -d k1
+0000000 22353 13125 13620 25888 29817 29728 29813  2661
+0000020 13361 13365 27750 14187 26122 29810 21024 13908
+0000040 12576 16695    10
+0000045
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ od -x k1
+0000000 5751 3345 3534 6520 7479 7420 7475 0a65
+0000020 3431 3435 6c66 376b 660a 7472 5220 3654
+0000040 3120 4137 000a
+0000045
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ sum k1
+43659     1
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ sum k1 k2
+43659     1 k1
+40346     1 k2
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cut -c 5-10 k1
+45 eyt
+flk7
+RT6 17
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ cut -b 2-3 k1
+WE
+45
+rt
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ tail +2 k1
+1454flk7
+frt RT6 17A
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ tail -c 20 k1
+454flk7
+frt RT6 17A
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ tail -n 2 k1
+1454flk7
+frt RT6 17A
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ tail -v k1
+==> k1 <==
+QWE345 eyt tute
+1454flk7
+frt RT6 17A
+
+
+.
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ file -b k1
+ASCII text
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ file k1 k2
+k1: ASCII text
+k2: ASCII text
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ paste k1 k2
+QWE345 eyt tute	REW345 eyt tile
+1454flk7	145Fm lk7
+frt RT6 17A	frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ paste -s k1 k2
+QWE345 eyt tute	1454flk7	frt RT6 17A
+REW345 eyt tile	145Fm lk7	frt R6 17 B
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ df
+Файл.система   1K-блоков Использовано Доступно Использовано% Cмонтировано в
+udev             3942220            0  3942220            0% /dev
+tmpfs             794500         1964   792536            1% /run
+/dev/nvme0n1p5  76645132      8765820 63942852           13% /
+tmpfs            3972492            0  3972492            0% /dev/shm
+tmpfs               5120            4     5116            1% /run/lock
+tmpfs            3972492            0  3972492            0% /sys/fs/cgroup
+/dev/loop0         13312        13312        0          100% /snap/gnome-characters/124
+/dev/loop2         43264        43264        0          100% /snap/gtk-common-themes/701
+/dev/loop1         13312        13312        0          100% /snap/gnome-characters/103
+/dev/loop3         89984        89984        0          100% /snap/core/5548
+/dev/loop4        124160       124160        0          100% /snap/wallpaperdownloader/22
+/dev/loop6        144384       144384        0          100% /snap/gnome-3-26-1604/70
+/dev/loop5         89088        89088        0          100% /snap/core/4917
+/dev/loop9          3840         3840        0          100% /snap/gnome-system-monitor/51
+/dev/loop10         2304         2304        0          100% /snap/gnome-calculator/238
+/dev/loop7         35584        35584        0          100% /snap/gtk-common-themes/319
+/dev/loop8          2432         2432        0          100% /snap/gnome-calculator/180
+/dev/loop11         3840         3840        0          100% /snap/gnome-system-monitor/57
+/dev/loop12       176256       176256        0          100% /snap/spotify/21
+/dev/loop13        14848        14848        0          100% /snap/gnome-logs/37
+/dev/loop14        14976        14976        0          100% /snap/gnome-logs/45
+/dev/nvme0n1p1    262144        34092   228052           14% /boot/efi
+tmpfs             794496           16   794480            1% /run/user/121
+tmpfs             794496           44   794452            1% /run/user/1000
+/dev/loop15        93184        93184        0          100% /snap/core/6405
+/dev/loop16         2304         2304        0          100% /snap/gnome-calculator/260
+/dev/loop17        13312        13312        0          100% /snap/gnome-characters/139
+/dev/loop18        35712        35712        0          100% /snap/gtk-common-themes/1122
+/dev/loop19       144128       144128        0          100% /snap/gnome-3-26-1604/78
+/dev/loop20       178176       178176        0          100% /snap/spotify/34
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ mktemp
+/tmp/tmp.gliA1oMGPl
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ mktemp -q
+/tmp/tmp.ltrNEQOx3W
+nikita@nikita-Lenovo-ideapad-530S-14IKB:~$ 
