@@ -89,12 +89,10 @@ int printder(derevo *x,int glub){
 int delluzel(derevo *der,int *rez){
     if(der->brat!=NULL){
         delluzel(der->brat,rez);
-        printf("7");
         free(der->brat);
     }
     if(der->rebenok!=NULL){
         delluzel(der->rebenok,rez);
-        printf("7");
         free(der->rebenok);       
     }
 
@@ -126,7 +124,6 @@ int poiskdel(derevo *der,char to,int *rez){
             free(der->rebenok->rebenok);
             derevo*p=der->rebenok;
             der->rebenok=der->rebenok->brat;
-            printf("77");
             free(p);
             *rez=1;
         }
