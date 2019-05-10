@@ -111,7 +111,6 @@ int poiskdel(derevo *der,char to,int *rez){
             free(der->brat->rebenok);
             derevo *p=der->brat;
             der->brat=der->brat->brat;
-            printf("77");
             free(p);
             *rez=1;
         }
