@@ -4,7 +4,7 @@ void spravka(){
     printf("a - dobavleniye uzla\n"
            "d - udaleniye uzla\n"
            "p - vbIvod dereva\n"
-           "i - proverka vse li listya na odnnom urovne variant 14\n"
+           "i - proverka vse li listya na odnnom urovne\n"
            "h - vivod spravki\n");
 
 }
@@ -86,18 +86,17 @@ int printder(derevo *x,int glub){
 }
 
 int delluzel(derevo *der,int *rez){
-    if(*rez==1)
-        return 0;
     if(der->brat!=NULL){
         delluzel(der->brat,rez);
-        *rez=1;
+        printf("7");
         free(der->brat);
     }
     if(der->rebenok!=NULL){
         delluzel(der->rebenok,rez);
-        *rez=1;
-        free(der->rebenok);
+        printf("7");
+        free(der->rebenok);       
     }
+
 return 0;}
 
 
@@ -110,8 +109,10 @@ int poiskdel(derevo *der,char to,int *rez){
             int d=-1;
             if(der->brat->rebenok!=NULL)
                 delluzel(der->brat->rebenok,&d);
+            free(der->brat->rebenok);
             derevo *p=der->brat;
             der->brat=der->brat->brat;
+            printf("77");
             free(p);
             *rez=1;
         }
@@ -121,8 +122,10 @@ int poiskdel(derevo *der,char to,int *rez){
             int d=-1;
             if(der->rebenok->rebenok!=NULL)
                 delluzel(der->rebenok->rebenok,&d);
+            free(der->rebenok->rebenok);
             derevo*p=der->rebenok;
             der->rebenok=der->rebenok->brat;
+            printf("77");
             free(p);
             *rez=1;
         }
