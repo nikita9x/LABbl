@@ -5,8 +5,7 @@ void spravka(){
            "d - udaleniye uzla\n"
            "p - vbIvod dereva\n"
            "i - proverka vse li listya na odnnom urovne\n"
-           "h - vivod spravki\n
-           "e - vivod is programmbI\n");
+           "h - vivod spravki\n");
 
 }
 char scanirovatb()
@@ -166,6 +165,7 @@ int main(){
     while(scanf_s("%c",&x)){
         if(x=='p'){
             printder(boss,0);
+            printf("vvedite sled komandu\n");
         }
         else if(x=='i'){
             rez=-1;
