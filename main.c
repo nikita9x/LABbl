@@ -5,7 +5,8 @@ void spravka(){
            "d - udaleniye uzla\n"
            "p - vbIvod dereva\n"
            "i - proverka vse li listya na odnnom urovne\n"
-           "h - vivod spravki\n");
+           "h - vivod spravki\n
+           "e - vivod is programmbI\n");
 
 }
 char scanirovatb()
