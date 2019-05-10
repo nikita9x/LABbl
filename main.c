@@ -4,7 +4,7 @@ void spravka(){
     printf("a - dobavleniye uzla\n"
            "d - udaleniye uzla\n"
            "p - vbIvod dereva\n"
-           "i - proverka vse li listya na odnnom urovne\n"
+           "i - proverka vse li listya na odnnom urovne variant 14\n"
            "h - vivod spravki\n");
 
 }
